@@ -22,9 +22,9 @@ jobs:
       - name: Build for GitHub Pages
         env:
           MODE: gh
-          BASE: /NAME/
+          BASE: /mw-openlife/
           SITE_URL: https://acrysense.github.io
-          CANONICAL_BASE: https://acrysense.github.io/NAME/
+          CANONICAL_BASE: https://acrysense.github.io/mw-openlife/
           CANONICAL_OFF: "0"
         run: |
           npm run prebuild || echo "no prebuild"
