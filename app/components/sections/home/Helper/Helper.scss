@@ -3,7 +3,25 @@
 
 @layer components {
     .helper {
+        position: relative;
+        z-index: 1;
         @include prop-vw(padding-bottom, 160, lg);
+        &__decor {
+            position: absolute;
+            @include prop-vw(top, -310, lg);
+            @include prop-vw(left, -945, lg);
+            z-index: -10;
+            transform: rotate(15deg);
+            display: block;
+            @include prop-vw(width, 1321, lg);
+            @include prop-vw(height, 1982, lg);
+            filter: blur(80px);
+            object-fit: cover;
+
+            @include down(desktop) {
+                display: none;
+            }
+        }
 
         @include only(tablet) {
             @include prop-vw(padding-top, 110, md);
