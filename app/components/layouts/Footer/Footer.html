@@ -1,0 +1,50 @@
+<footer class="footer" data-path="layouts">
+    <div class="container">
+        <div class="footer__main">
+            <span class="footer__title">Скачай свой личный <br>ИИ-помощник — </span>
+            <span class="footer__subtitle">который понимает тебя</span>
+            <div class="footer__apps">
+                <a href="#" class="footer__app-btn">
+                    <img src="/assets/images/app-store.svg" width="198" height="66" alt="App Store">
+                </a>
+                <a href="#" class="footer__app-btn">
+                    <img src="/assets/images/google-play.svg" width="198" height="66" alt="Google Play">
+                </a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <picture class="footer__logo">
+                <img src="/assets/images/logo-copyright.svg" width="158" height="65" alt="Openlife">
+            </picture>
+            <div class="footer__inner">
+                {{> components/Button/Button props=(obj
+                    class='footer__btn'
+                    href='#'
+                    text='Телеграм-Бот'
+                    icon='icon-arrow-up-right'
+                )}}
+                {{> components/Button/Button props=(obj
+                    class='footer__btn'
+                    href='#'
+                    text='Поддержка'
+                    icon='icon-arrow-up-right'
+                )}}
+                <a href="#" class="footer__store-btn">
+                    <img src="/assets/images/app-store.svg" width="144" height="48" alt="App Store">
+                </a>
+                <a href="#" class="footer__store-btn">
+                    <img src="/assets/images/google-play.svg" width="144" height="48" alt="Google Play">
+                </a>
+            </div>
+            <div class="footer__inner">
+                <div class="footer__links">
+                    <a href="#" class="footer__link">Условия и Политика</a>
+                </div>
+                <a href="mosco-web.ru" class="footer__author">
+                    <img src="/assets/images/moscoweb.svg" width="99" height="20" alt="MOSCO">
+                </a>
+            </div>
+        </div>
+        <video class="footer__bg" poster="/assets/images/footer-bg.png" src="/assets/videos/footer-bg.mp4" autoplay loop muted playsinline preload="metadata" aria-hidden="true"></video>
+    </div>
+</footer>

@@ -1,13 +1,242 @@
 @use '@/assets/styles/base/mixins' as *;
+@use '@/assets/styles/base/vars' as *;
 
 @layer components {
     .main {
-        // for mobile-first
-        // @include up(tablet) {}
-        // @include up(desktop) {}
-        
-        // for desktop-fist
-        // @include only(tablet) {}
-        // @include only(mobile) {}
+        position: relative;
+        z-index: 1;
+        @include prop-vw(padding-block, 40, lg);
+        min-height: 100dvh;
+
+        @include only(tablet) {
+            @include prop-vw(padding-block, 30, md);
+        }
+        @include only(mobile) {
+            @include prop-vw(padding-block, 30, sm);
+        }
+
+        &__wrapper {
+            margin-left: auto;
+            @include prop-vw(max-width, 312, lg);
+            width: 100%;
+
+            @include only(tablet) {
+                @include prop-vw(max-width, 223, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(max-width, 223, sm);
+            }
+        }
+        &__info {
+            display: block;
+            margin-left: auto;
+            @include prop-vw(padding, 16, lg);
+            @include prop-vw(max-width, 207, lg);
+            width: 100%;
+            background: linear-gradient(220.74deg, rgba(255, 255, 255, 0.04) 23.14%, rgba(143, 143, 143, 0.04) 94.77%);
+            @include prop-vw(border-radius, 25, lg);
+            backdrop-filter: blur(20px);
+
+            @include only(tablet) {
+                @include prop-vw(padding, 16, md);
+                @include prop-vw(max-width, 223, md);
+                @include prop-vw(border-radius, 27, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(padding, 16, sm);
+                @include prop-vw(max-width, 223, sm);
+                @include prop-vw(border-radius, 27, sm);
+            }
+        }
+        &__apps {
+            display: flex;
+            flex-wrap: wrap;
+            @include prop-vw(gap, 5, lg);
+
+            @include only(tablet) {
+                @include prop-vw(gap, 6, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(gap, 6, sm);
+            }
+        }
+        &__app-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include prop-vw(padding, 8, lg);
+            @include width-cols(2, 6, lg);
+            @include border-all(1, solid, #353535, lg);
+            @include prop-vw(border-radius, 22, lg);
+            & > svg {
+                @include prop-vw(min-width, 15, lg);
+                @include prop-vw(width, 15, lg);
+                @include prop-vw(height, 15, lg);
+                color: #838383;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(padding, 8, md);
+                @include width-cols(2, 6, md);
+                @include border-all(1, solid, #353535, md);
+                @include prop-vw(border-radius, 22, md);
+                & > svg {
+                    @include prop-vw(min-width, 15, md);
+                    @include prop-vw(width, 15, md);
+                    @include prop-vw(height, 15, md);
+                }
+            }
+            @include only(mobile) {
+                @include prop-vw(padding, 8, sm);
+                @include width-cols(2, 6, sm);
+                @include border-all(1, solid, #353535, sm);
+                @include prop-vw(border-radius, 22, sm);
+                & > svg {
+                    @include prop-vw(min-width, 15, sm);
+                    @include prop-vw(width, 15, sm);
+                    @include prop-vw(height, 15, sm);
+                }
+            }
+        }
+        &__help {
+            display: block;
+            @include prop-vw(margin-top, 12, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 14, lg);
+            font-weight: normal;
+            line-height: 1.07142857143;
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 12, md);
+                @include prop-vw(font-size, 14, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 12, sm);
+                @include prop-vw(font-size, 14, sm);
+            }
+        }
+        &__logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            display: block;
+            @include prop-vw(width, 696, lg);
+            @include prop-vw(height, 151, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(width, 606, md);
+                @include prop-vw(height, 132, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(width, 320, sm);
+                @include prop-vw(height, 69, sm);
+            }
+        }
+        &__btn {
+            @include prop-vw(margin-top, 10, lg);
+            margin-left: auto;
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 10, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 10, sm);
+            }
+        }
+        &__media {
+            @include up(desktop) {
+                @include prop-vw(margin-top, 10, lg);
+            }
+        }
+        &__bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -5;
+            transform: translate(-50%, -50%);
+            display: block;
+            @include prop-vw(width, 301, lg);
+            @include prop-vw(height, 453, lg);
+            filter: blur(25px);
+            object-fit: cover;
+
+            @include only(tablet) {
+                @include prop-vw(width, 272, md);
+                @include prop-vw(height, 408, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(width, 207, sm);
+                @include prop-vw(height, 310, sm);
+            }
+        }
+    }
+
+    .main-media {
+        position: relative;
+        z-index: 1;
+
+        @include only(tablet) {
+            position: absolute;
+            @include prop-vw(right, 20, md);
+            @include prop-vw(bottom, 30, md);
+        }
+        @include only(mobile) {
+            position: absolute;
+            @include prop-vw(right, 20, sm);
+            @include prop-vw(bottom, 30, sm);
+        }
+
+        &__play {
+            position: absolute;
+            @include prop-vw(top, 16, lg);
+            @include prop-vw(right, 16, lg);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            @include prop-vw(width, 40, lg);
+            @include prop-vw(height, 40, lg);
+            font-size: 0;
+            background: rgba(19, 19, 20, 0.8);
+            border: none;
+            border-radius: 50%;
+            backdrop-filter: blur(20px);
+            & > svg {
+                @include prop-vw(min-width, 16, lg);
+                @include prop-vw(width, 16, lg);
+                @include prop-vw(height, 16, lg);
+            }
+            &:focus {
+                outline: none;
+            }
+
+            @include only(tablet) {}
+            @include only(mobile) {}
+        }
+        &__bg {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            @include prop-vw(height, 175, lg);
+            @include prop-vw(border-radius, 30, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @include only(tablet) {}
+            @include only(mobile) {}
+        }
     }
 }

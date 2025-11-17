@@ -1,0 +1,171 @@
+@use '@/assets/styles/base/mixins' as *;
+@use '@/assets/styles/base/vars' as *;
+
+@layer components {
+    .speak {
+        position: relative;
+        z-index: 1;
+        @include prop-vw(padding-bottom, 160, lg);
+
+        @include only(tablet) {
+            @include prop-vw(padding-bottom, 140, md);
+        }
+        @include only(mobile) {
+            @include prop-vw(padding-bottom, 296, sm);
+        }
+
+        &__heading {
+            position: relative;
+            z-index: 1;
+            display: block;
+            @include prop-vw(margin-right, 335, lg);
+            margin-left: auto;
+            @include prop-vw(max-width, 360, lg);
+            width: 100%;
+            font-family: $font-secondary;
+            @include prop-vw(font-size, 32, lg);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            & > span {
+                opacity: 0.3;
+            }
+
+            @include only(tablet) {
+                margin-right: 0;
+                @include prop-vw(max-width, 347, md);
+                @include prop-vw(font-size, 32, md);
+            }
+            @include only(mobile) {
+                margin-right: 0;
+                @include prop-vw(max-width, 243, sm);
+                @include prop-vw(font-size, 25, sm);
+            }
+        }
+        &__heading + &__img {
+            @include prop-vw(margin-top, 45, lg);
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 45, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 32, sm);
+            }
+        }
+        &__img {
+            display: block;
+            overflow: hidden;
+            @include prop-vw(margin-right, 376, lg);
+            margin-left: auto;
+            @include prop-vw(min-width, 561, lg);
+            @include prop-vw(width, 561, lg);
+            @include prop-vw(height, 350, lg);
+            @include prop-vw(border-radius, 40, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(margin-right, 148, md);
+                @include prop-vw(min-width, 407, md);
+                @include prop-vw(width, 407, md);
+                @include prop-vw(height, 255, md);
+                @include prop-vw(border-radius, 40, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-right, 43, sm);
+                @include prop-vw(min-width, 256, sm);
+                @include prop-vw(width, 256, sm);
+                @include prop-vw(height, 200, sm);
+                @include prop-vw(border-radius, 32, sm);
+            }
+        }
+        &__voice {
+            position: absolute;
+            @include prop-vw(top, 195, lg);
+            @include prop-vw(right, 221, lg);
+            z-index: 1;
+            display: block;
+            @include prop-vw(width, 293, lg);
+            @include prop-vw(height, 110, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(top, 201, md);
+                @include prop-vw(right, 20, md);
+                @include prop-vw(width, 242, md);
+                @include prop-vw(height, 91, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 361, sm);
+                @include prop-vw(right, 12, sm);
+                @include prop-vw(width, 200, sm);
+                @include prop-vw(height, 75, sm);
+            }
+        }
+        &__text {
+            position: absolute;
+            @include prop-vw(top, 141, lg);
+            @include prop-vw(left, 353, lg);
+            z-index: 1;
+            display: block;
+            @include prop-vw(width, 100, lg);
+            @include prop-vw(height, 100, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(top, 173, md);
+                @include prop-vw(left, 60, md);
+                @include prop-vw(width, 100, md);
+                @include prop-vw(height, 100, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 122, sm);
+                @include prop-vw(left, 12, sm);
+                @include prop-vw(width, 80, sm);
+                @include prop-vw(height, 80, sm);
+            }
+        }
+        &__track {
+            position: absolute;
+            @include prop-vw(top, 357, lg);
+            @include prop-vw(left, 308, lg);
+            z-index: 1;
+            display: block;
+            @include prop-vw(width, 221, lg);
+            @include prop-vw(height, 70, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(top, 361, md);
+                @include prop-vw(left, 20, md);
+                @include prop-vw(width, 221, md);
+                @include prop-vw(height, 67, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 452, sm);
+                @include prop-vw(left, 12, sm);
+                @include prop-vw(width, 187, sm);
+                @include prop-vw(height, 57, sm);
+            }
+        }
+    }
+}

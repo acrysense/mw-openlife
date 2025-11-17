@@ -1,8 +1,9 @@
-@forward '@/components/layouts/Header/Header';
 @forward '@/components/layouts/Footer/Footer';
 
 @forward '@/components/sections/home/Main/Main';
-
-// @forward '@/components/sections/shared/';
+@forward '@/components/sections/home/Helper/Helper';
+@forward '@/components/sections/home/Speak/Speak';
+@forward '@/components/sections/home/Talking/Talking';
+@forward '@/components/sections/home/Possibilities/Possibilities';
 
 @forward '@/components/components/Button/Button';

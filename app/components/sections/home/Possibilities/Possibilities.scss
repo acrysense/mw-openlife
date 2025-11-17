@@ -1,0 +1,205 @@
+@use '@/assets/styles/base/mixins' as *;
+@use '@/assets/styles/base/vars' as *;
+
+@layer components {
+    .possibilities {
+        position: relative;
+        z-index: 1;
+        @include prop-vw(padding-bottom, 1119, lg);
+
+        @include only(tablet) {
+            @include prop-vw(padding-bottom, 1131, md);
+        }
+        @include only(mobile) {
+            @include prop-vw(padding-bottom, 1214, sm);
+        }
+
+        &__heading {
+            display: block;
+            @include prop-vw(margin-right, 428, lg);
+            @include prop-vw(margin-bottom, 45, lg);
+            margin-left: auto;
+            @include prop-vw(max-width, 270, lg);
+            width: 100%;
+            font-family: $font-secondary;
+            @include prop-vw(font-size, 32, lg);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -0.01em;
+
+            @include only(tablet) {
+                @include prop-vw(margin-right, 56, md);
+                @include prop-vw(margin-bottom, 45, md);
+                @include prop-vw(max-width, 291, md);
+                @include prop-vw(font-size, 32, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-right, 17, sm);
+                @include prop-vw(margin-bottom, 30, sm);
+                @include prop-vw(max-width, 226, sm);
+                @include prop-vw(font-size, 25, sm);
+            }
+        }
+        &__decor {
+            position: absolute;
+            z-index: 1;
+            display: block;
+            overflow: hidden;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            &--1 {
+                @include prop-vw(top, 109, lg);
+                @include prop-vw(left, 353, lg);
+                @include prop-vw(width, 342, lg);
+                @include prop-vw(height, 174, lg);
+            }
+            &--2 {
+                @include prop-vw(top, 293, lg);
+                @include prop-vw(left, 527, lg);
+                @include prop-vw(width, 168, lg);
+                @include prop-vw(height, 168, lg);
+            }
+            &--3 {
+                @include prop-vw(top, 461, lg);
+                @include prop-vw(left, 353, lg);
+                @include prop-vw(width, 168, lg);
+                @include prop-vw(height, 168, lg);
+            }
+            &--4 {
+                @include prop-vw(top, 109, lg);
+                @include prop-vw(left, 705, lg);
+                @include prop-vw(width, 343, lg);
+                @include prop-vw(height, 564, lg);
+            }
+            &--5 {
+                @include prop-vw(top, 683, lg);
+                @include prop-vw(left, 353, lg);
+                @include prop-vw(width, 342, lg);
+                @include prop-vw(height, 319, lg);
+            }
+            &--6 {
+                @include prop-vw(top, 1012, lg);
+                @include prop-vw(left, 353, lg);
+                @include prop-vw(width, 342, lg);
+                @include prop-vw(height, 171, lg);
+            }
+            &--7 {
+                @include prop-vw(top, 683, lg);
+                @include prop-vw(left, 705, lg);
+                @include prop-vw(width, 168, lg);
+                @include prop-vw(height, 168, lg);
+            }
+            &--8 {
+                @include prop-vw(top, 861, lg);
+                @include prop-vw(left, 818, lg);
+                @include prop-vw(width, 230, lg);
+                @include prop-vw(height, 318, lg);
+            }
+
+            @include only(tablet) {
+                &--1 {
+                    @include prop-vw(top, 104, md);
+                    @include prop-vw(left, 20, md);
+                    @include prop-vw(width, 347, md);
+                    @include prop-vw(height, 178, md);
+                }
+                &--2 {
+                    @include prop-vw(top, 292, md);
+                    @include prop-vw(left, 200, md);
+                    @include prop-vw(width, 168, md);
+                    @include prop-vw(height, 168, md);
+                }
+                &--3 {
+                    @include prop-vw(top, 464, md);
+                    @include prop-vw(left, 20, md);
+                    @include prop-vw(width, 168, md);
+                    @include prop-vw(height, 168, md);
+                }
+                &--4 {
+                    @include prop-vw(top, 104, md);
+                    @include prop-vw(left, 377, md);
+                    @include prop-vw(width, 347, md);
+                    @include prop-vw(height, 579, md);
+                }
+                &--5 {
+                    @include prop-vw(top, 693, md);
+                    @include prop-vw(left, 20, md);
+                    @include prop-vw(width, 347, md);
+                    @include prop-vw(height, 325, md);
+                }
+                &--6 {
+                    @include prop-vw(top, 1028, md);
+                    @include prop-vw(left, 20, md);
+                    @include prop-vw(width, 347, md);
+                    @include prop-vw(height, 168, md);
+                }
+                &--7 {
+                    @include prop-vw(top, 693, md);
+                    @include prop-vw(left, 377, md);
+                    @include prop-vw(width, 168, md);
+                    @include prop-vw(height, 168, md);
+                }
+                &--8 {
+                    @include prop-vw(top, 871, md);
+                    @include prop-vw(left, 494, md);
+                    @include prop-vw(width, 230, md);
+                    @include prop-vw(height, 324, md);
+                }
+            }
+            @include only(mobile) {
+                &--1 {
+                    @include prop-vw(top, 513, sm);
+                    @include prop-vw(left, 120, sm);
+                    @include prop-vw(width, 243, sm);
+                    @include prop-vw(height, 125, sm);
+                }
+                &--2 {
+                    @include prop-vw(top, 86, sm);
+                    @include prop-vw(left, 12, sm);
+                    @include prop-vw(width, 98, sm);
+                    @include prop-vw(height, 98, sm);
+                }
+                &--3 {
+                    @include prop-vw(top, 513, sm);
+                    @include prop-vw(left, 12, sm);
+                    @include prop-vw(width, 98, sm);
+                    @include prop-vw(height, 98, sm);
+                }
+                &--4 {
+                    @include prop-vw(top, 86, sm);
+                    @include prop-vw(left, 120, sm);
+                    @include prop-vw(width, 243, sm);
+                    @include prop-vw(height, 417, sm);
+                }
+                &--5 {
+                    @include prop-vw(top, 648, sm);
+                    @include prop-vw(left, 120, sm);
+                    @include prop-vw(width, 243, sm);
+                    @include prop-vw(height, 231, sm);
+                }
+                &--6 {
+                    @include prop-vw(top, 1140, sm);
+                    @include prop-vw(left, 120, sm);
+                    @include prop-vw(width, 243, sm);
+                    @include prop-vw(height, 110, sm);
+                }
+                &--7 {
+                    @include prop-vw(top, 405, sm);
+                    @include prop-vw(left, 12, sm);
+                    @include prop-vw(width, 98, sm);
+                    @include prop-vw(height, 98, sm);
+                }
+                &--8 {
+                    @include prop-vw(top, 888, sm);
+                    @include prop-vw(left, 120, sm);
+                    @include prop-vw(width, 171, sm);
+                    @include prop-vw(height, 242, sm);
+                }
+            }
+        }
+    }
+}

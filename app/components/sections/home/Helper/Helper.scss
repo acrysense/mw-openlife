@@ -1,0 +1,368 @@
+@use '@/assets/styles/base/mixins' as *;
+@use '@/assets/styles/base/vars' as *;
+
+@layer components {
+    .helper {
+        @include prop-vw(padding-bottom, 160, lg);
+
+        @include only(tablet) {
+            @include prop-vw(padding-top, 110, md);
+            @include prop-vw(padding-bottom, 140, md);
+        }
+        @include only(mobile) {
+            @include prop-vw(padding-top, 100, sm);
+            @include prop-vw(padding-bottom, 130, sm);
+        }
+
+        &__top {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+
+            @include up(desktop) {
+                margin-left: auto;
+                @include prop-vw(padding-left, 178, lg);
+                @include prop-vw(max-width, 1225, lg);
+            }
+        }
+        &__title {
+            display: block;
+            @include prop-vw(max-width, 696, lg);
+            width: 100%;
+            font-family: $font-secondary;
+            @include prop-vw(font-size, 76, lg);
+            font-weight: 300;
+            line-height: 0.80263157894;
+            letter-spacing: -0.02em;
+
+            @include only(tablet) {
+                @include prop-vw(max-width, 696, md);
+                @include prop-vw(font-size, 73, md);
+                line-height: 0.79452054794;
+            }
+            @include only(mobile) {
+                @include prop-vw(max-width, 351, sm);
+                @include prop-vw(font-size, 42, sm);
+                line-height: 0.95238095238;
+            }
+        }
+        &__subtitle {
+            display: block;
+            margin-left: auto;
+            @include prop-vw(margin-right, 240, lg);
+            @include prop-vw(max-width, 418, lg);
+            width: 100%;
+            font-family: $font-secondary;
+            @include prop-vw(font-size, 76, lg);
+            font-weight: 300;
+            line-height: 0.80263157894;
+            letter-spacing: -0.02em;
+            opacity: 0.3;
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 6, md);
+                margin-right: 0;
+                @include prop-vw(max-width, 347, md);
+                @include prop-vw(font-size, 73, md);
+                line-height: 0.79452054794;
+            }
+            @include only(mobile) {
+                margin-right: 0;
+                @include prop-vw(max-width, 233, sm);
+                @include prop-vw(font-size, 42, sm);
+                line-height: 0.95238095238;
+            }
+        }
+        &__icon {
+            position: absolute;
+            @include prop-vw(top, 9, lg);
+            @include prop-vw(left, 710, lg);
+            z-index: 1;
+            display: block;
+            overflow: hidden;
+            @include prop-vw(width, 80, lg);
+            @include prop-vw(height, 39, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(top, 9, md);
+                @include prop-vw(left, 480, md);
+                @include prop-vw(width, 80, md);
+                @include prop-vw(height, 39, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 5, sm);
+                @include prop-vw(left, 280, sm);
+                @include prop-vw(width, 55, sm);
+                @include prop-vw(height, 27, sm);
+            }
+        }
+        &__img {
+            display: block;
+            overflow: hidden;
+            @include prop-vw(margin-top, 45, lg);
+            margin-left: auto;
+            @include prop-vw(min-width, 1225, lg);
+            @include prop-vw(width, 1225, lg);
+            @include prop-vw(height, 340, lg);
+            @include prop-vw(border-radius, 55, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 45, md);
+                @include prop-vw(min-width, 704, md);
+                @include prop-vw(width, 704, md);
+                @include prop-vw(height, 380, md);
+                @include prop-vw(border-radius, 62, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 25, sm);
+                @include prop-vw(margin-left, -12, sm);
+                min-width: auto;
+                width: 100vw;
+                @include prop-vw(height, 240, sm);
+                @include prop-vw(border-radius, 30, sm);
+            }
+        }
+        &__wrap {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            @include prop-vw(margin-top, -176, lg);
+            @include prop-vw(min-height, 423, lg);
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, -70, md);
+                @include prop-vw(min-height, 376, md);
+            }
+            @include only(mobile) {
+                flex-direction: column;
+                @include prop-vw(margin-top, -90, sm);
+                min-height: auto;
+            }
+        }
+        &__cards {
+            @include prop-vw(margin-left, 333, lg);
+
+            @include only(tablet) {
+                @include prop-vw(margin-left, 80, md);
+            }
+            @include only(mobile) {
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+        &__card + &__card {
+            @include prop-vw(margin-top, 23, lg);
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 20, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 10, sm);
+            }
+        }
+        &__wrapper {
+            @include prop-vw(margin-top, 45, lg);
+            @include prop-vw(margin-right, 252, lg);
+            margin-left: auto;
+            @include prop-vw(max-width, 443, lg);
+            width: 100%;
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 45, md);
+                margin-right: 0;
+                @include prop-vw(max-width, 347, md);
+            }
+            @include only(mobile) {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                @include prop-vw(margin-top, 35, sm);
+                margin-right: 0;
+                max-width: none;
+            }
+        }
+        &__help {
+            display: block;
+            @include prop-vw(margin-bottom, 20, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 15, lg);
+            font-weight: normal;
+            line-height: 1.13333333333;
+            letter-spacing: -0.03em;
+            opacity: 0.43;
+
+            @include only(tablet) {
+                @include prop-vw(margin-bottom, 22, md);
+                @include prop-vw(font-size, 14, md);
+                line-height: 1.07142857143;
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-right, 20, sm);
+                margin-bottom: 0;
+                @include prop-vw(font-size, 14, sm);
+                line-height: 1.07142857143;
+            }
+        }
+        &__description {
+            display: block;
+            width: fit-content;
+            font-family: $font-secondary;
+            @include prop-vw(font-size, 32, lg);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            & > span {
+                opacity: 0.3;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(font-size, 32, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 25, sm);
+            }
+        }
+    }
+
+    .helper-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        @include prop-vw(padding, 20, lg);
+        @include prop-vw(max-width, 170, lg);
+        @include prop-vw(min-height, 200, lg);
+        width: 100%;
+        color: $color-white;
+        background: rgba(19, 19, 20, 0.8);
+        @include prop-vw(border-radius, 28, lg);
+        backdrop-filter: blur(20px);
+
+        @include only(tablet) {
+            @include prop-vw(padding, 20, md);
+            @include prop-vw(max-width, 170, md);
+            @include prop-vw(min-height, 178, md);
+            @include prop-vw(border-radius, 28, md);
+        }
+        @include only(mobile) {
+            @include prop-vw(padding, 20, sm);
+            @include prop-vw(max-width, 170, sm);
+            @include prop-vw(min-height, 200, sm);
+            @include prop-vw(border-radius, 28, sm);
+        }
+
+        &__icon {
+            display: block;
+            overflow: hidden;
+            @include prop-vw(min-width, 24, lg);
+            @include prop-vw(width, 24, lg);
+            @include prop-vw(height, 24, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(min-width, 24, md);
+                @include prop-vw(width, 24, md);
+                @include prop-vw(height, 24, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(min-width, 20, sm);
+                @include prop-vw(width, 20, sm);
+                @include prop-vw(height, 20, sm);
+            }
+        }
+        &__description {
+            display: block;
+            width: fit-content;
+            @include prop-vw(font-size, 15, lg);
+            font-weight: normal;
+            line-height: 1.13333333333;
+            letter-spacing: -0.03em;
+
+            @include only(tablet) {
+                @include prop-vw(font-size, 14, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 12, sm);
+            }
+        }
+        &__kk {
+            display: block;
+            width: fit-content;
+            font-family: $font-thirdy;
+            @include prop-vw(font-size, 35, lg);
+            font-weight: normal;
+            line-height: 1;
+            letter-spacing: -0.02em;
+
+            @include only(tablet) {
+                @include prop-vw(font-size, 30, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 26, sm);
+            }
+        }
+        &__kk + &__info,
+        &__info + &__kk {
+            @include prop-vw(margin-top, 14, lg);
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 12, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 10, sm);
+            }
+        }
+        &__value {
+            display: block;
+            width: fit-content;
+            @include prop-vw(font-size, 18, lg);
+            font-weight: normal;
+            line-height: 1.11111111111;
+            letter-spacing: -0.06em;
+            & > span {
+                @include prop-vw(font-size, 15, lg);
+                opacity: 0.4;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(font-size, 16, md);
+                & > span {
+                    @include prop-vw(font-size, 14, lg);
+                }
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 14, sm);
+                & > span {
+                    @include prop-vw(font-size, 12, lg);
+                }
+            }
+        }
+        &__value + &__value {
+            @include prop-vw(margin-top, 2, lg);
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 2, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 2, sm);
+            }
+        }
+    }
+}

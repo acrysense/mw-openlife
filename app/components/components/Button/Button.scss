@@ -2,5 +2,67 @@
 @use '@/assets/styles/base/vars' as *;
 
 @layer components {
-    .btn {}
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include prop-vw(gap, 5, lg);
+        @include prop-vw(padding-block, 16, lg);
+        @include prop-vw(padding-inline, 17, lg);
+        width: fit-content;
+        @include prop-vw(font-size, 14, lg);
+        font-weight: normal;
+        line-height: 1.07142857143;
+        text-align: center;
+        color: $color-white;
+        background: linear-gradient(220.74deg, rgba(255, 255, 255, 0.04) 23.14%, rgba(143, 143, 143, 0.04) 94.77%);
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+        border: none;
+        @include prop-vw(border-radius, 14, lg);
+        backdrop-filter: blur(20px);
+        transition: color $transition-default, background-position $transition-default;
+        & > svg {
+            @include prop-vw(min-height, 15, lg);
+            @include prop-vw(width, 15, lg);
+            @include prop-vw(height, 15, lg);
+        }
+        &:focus {
+            outline: none;
+        }
+        &[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        @media screen and (hover: hover) {
+            &:hover:not([disabled]) {
+                background-position: 100% 50%;
+            }
+        }
+        @include only(tablet) {
+            @include prop-vw(gap, 5, md);
+            @include prop-vw(padding-block, 16, md);
+            @include prop-vw(padding-inline, 17, md);
+            @include prop-vw(font-size, 14, md);
+            @include prop-vw(border-radius, 14, md);
+            & > svg {
+                @include prop-vw(min-height, 15, md);
+                @include prop-vw(width, 15, md);
+                @include prop-vw(height, 15, md);
+            }
+        }
+        @include only(mobile) {
+            @include prop-vw(gap, 5, sm);
+            @include prop-vw(padding-block, 16, sm);
+            @include prop-vw(padding-inline, 17, sm);
+            @include prop-vw(font-size, 14, sm);
+            @include prop-vw(border-radius, 14, sm);
+            & > svg {
+                @include prop-vw(min-height, 15, sm);
+                @include prop-vw(width, 15, sm);
+                @include prop-vw(height, 15, sm);
+            }
+        }
+    }
 }

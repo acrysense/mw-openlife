@@ -3,11 +3,5 @@
         "display": "swap",
         "varWght": "300 700"
     },
-    "families": {
-        "HelveticaNeue": {
-            "cssFamily": "Helvetica Neue",
-            "normal": { "varWght": "300 700" },
-            "italic": { "varWght": "300 700" }
-        }
-    }
+    "families": {}
 }

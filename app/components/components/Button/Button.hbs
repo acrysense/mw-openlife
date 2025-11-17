@@ -1,16 +1,31 @@
 {{#if props.href}}
-    <a
-        class="btn{{#if props.variant}} btn--{{props.variant}}{{/if}}{{#if props.class}} {{props.class}}{{/if}}"
-        href="{{props.href}}"
-        {{#if props.target}}target="{{props.target}}"{{/if}}
-        {{#if props.download}}download{{/if}}
-        {{{attrs props.attrs}}}
-    >{{default props.text ''}}</a>
+	<a
+		class="btn{{#if props.variant}} btn--{{props.variant}}{{/if}}{{#if props.size}} btn--{{props.size}}{{/if}}{{#if props.class}} {{props.class}}{{/if}}"
+		href="{{props.href}}"
+		{{#if props.target}}target="{{props.target}}"{{/if}}
+		{{#if props.download}}download{{/if}}
+		{{{attrs props.attrs}}}
+	>
+        <span class="btn__text">{{default props.text ''}}</span>
+		{{#if props.icon}}
+			<svg class="btn__icon btn__icon--after" aria-hidden="true" focusable="false" width="15" height="15">
+				<use href="#{{props.icon}}"></use>
+			</svg>
+		{{/if}}
+	</a>
 {{else}}
-    <button
-        class="btn{{#if props.variant}} btn--{{props.variant}}{{/if}}{{#if props.class}} {{props.class}}{{/if}}"
-        type="{{default props.type 'button'}}"
-        {{#if props.disabled}}disabled{{/if}}
-        {{{attrs props.attrs}}}
-    >{{default props.text ''}}</button>
+	<button
+		class="btn{{#if props.variant}} btn--{{props.variant}}{{/if}}{{#if props.size}} btn--{{props.size}}{{/if}}{{#if props.class}} {{props.class}}{{/if}}"
+		type="{{default props.type 'button'}}"
+		{{#if props.disabled}}disabled{{/if}}
+		{{{attrs props.attrs}}}
+		aria-label="{{default props.text ''}}"
+	>
+        <span class="btn__text">{{default props.text ''}}</span>
+		{{#if props.icon}}
+			<svg caria-hidden="true" focusable="false" width="15" height="15">
+				<use href="#{{props.icon}}"></use>
+			</svg>
+		{{/if}}
+	</button>
 {{/if}}
