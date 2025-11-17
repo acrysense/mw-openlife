@@ -1,8 +1,8 @@
 {
-	"template": "vite",
+	"template": "openlife",
 
-	"siteName": "Vite",
-	"siteUrl": "https://example.com",
+	"siteName": "Openlife",
+	"siteUrl": "https://openlife.company",
 
 	"lang": "ru",
 
@@ -22,8 +22,8 @@
 	],
 
 	"seoDefaults": {
-		"title": "Vite — стартовая страница",
-		"description": "Стартовый проект на Vite: быстрый и гибкий старт.",
+		"title": "Openlife — твой личный ИИ помощник",
+		"description": "ИИ - мгновенно рассчитает КБЖУ и полезные витамины и минерала твоего блюда, добавив результаты в персональный пищевой дневник.",
 		"ogImage": "/og/default.jpg",
 		"twitterCard": "summary_large_image"
 	}
