@@ -8,8 +8,8 @@
         @include prop-vw(padding-bottom, 160, lg);
         &__decor {
             position: absolute;
-            @include prop-vw(top, -310, lg);
-            @include prop-vw(left, -945, lg);
+            @include prop-vw(top, -510, lg);
+            @include prop-vw(left, -845, lg);
             z-index: -10;
             transform: rotate(15deg);
             display: block;
