@@ -1,0 +1,71 @@
+@use '@/assets/styles/base/mixins' as *;
+@use '@/assets/styles/base/vars' as *;
+
+@layer components {
+	.scroll-pager {
+		position: fixed;
+        @include prop-vw(top, 40, lg);
+        @include prop-vw(left, 20, lg);
+		z-index: 9999;
+		pointer-events: none;
+
+        @include down(desktop) {
+            display: none;
+        }
+
+        &__inner {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            @include prop-vw(gap, 7, lg);
+            width: fit-content;
+        }
+        &__title {
+            display: block;
+            width: fit-content;
+            font-family: $font-secondary;
+            @include prop-vw(font-size, 14, lg);
+            font-weight: normal;
+        }
+		&__list {
+			display: flex;
+			flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            @include prop-vw(gap, 3, lg);
+            margin: 0;
+            list-style: none;
+            @include prop-vw(padding-block, 12, lg);
+            @include prop-vw(padding-inline, 14.5, lg);
+            background: linear-gradient(220.74deg, rgba(255, 255, 255, 0.08) 23.14%, rgba(143, 143, 143, 0.08) 94.77%);
+            @include prop-vw(border-radius, 1000, lg);
+            backdrop-filter: blur(5px);
+		}
+		&__dot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            @include prop-vw(min-width, 4, lg);
+            @include prop-vw(height, 4, lg);
+            font-size: 0;
+			background: rgba($color-white, 0.3);
+            border: none;
+            border-radius: 50%;
+            transition: background-color $transition-default;
+			pointer-events: auto;
+            &:focus {
+                outline: none;
+            }
+			&.is-active {
+                background: $color-white;
+			}
+
+            @media screen and (hover: hover) {
+                &:hover {
+                    background: rgba($color-white, 0.6);
+                }
+            }
+		}
+	}
+}

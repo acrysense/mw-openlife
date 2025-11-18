@@ -49,9 +49,22 @@
             }
         }
         &__apps {
+            position: relative;
+            z-index: 10;
             display: flex;
             flex-wrap: wrap;
             @include prop-vw(gap, 5, lg);
+            &--floating {
+                @include prop-vw(right, 36, lg);
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                .main {
+                    &__app-btn {
+                        @include prop-vw(min-width, 85, lg);
+                    }
+                }
+            }
 
             @include only(tablet) {
                 @include prop-vw(gap, 6, md);
@@ -68,6 +81,7 @@
             @include width-cols(2, 6, lg);
             @include border-all(1, solid, #353535, lg);
             @include prop-vw(border-radius, 22, lg);
+            transition: background-color $transition-default, border-color $transition-default;
             & > svg {
                 @include prop-vw(min-width, 15, lg);
                 @include prop-vw(width, 15, lg);
@@ -75,6 +89,12 @@
                 color: #838383;
             }
 
+            @media screen and (hover: hover) {
+                &:hover {
+                    background: $color-white;
+                    border-color: $color-white;
+                }
+            }
             @include only(tablet) {
                 @include prop-vw(padding, 8, md);
                 @include width-cols(2, 6, md);

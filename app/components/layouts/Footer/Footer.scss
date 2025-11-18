@@ -268,12 +268,21 @@
             @include prop-vw(font-size, 14, lg);
             font-weight: normal;
             line-height: 1.07142857143;
+            @include border-side(bottom, 1, solid, transparent, lg);
+            transition: border-color $transition-default;
 
+            @media screen and (hover: hover) {
+                &:hover {
+                    border-color: $color-white;
+                }
+            }
             @include only(tablet) {
                 @include prop-vw(font-size, 14, md);
+                @include border-side(bottom, 1, solid, transparent, md);
             }
             @include only(mobile) {
                 @include prop-vw(font-size, 14, sm);
+                @include border-side(bottom, 1, solid, transparent, sm);
             }
         }
         &__author {

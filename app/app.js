@@ -1,6 +1,7 @@
 import 'virtual:svg-icons-register'
 import '@/assets/styles/main.scss'
 import { autosize } from '@/utils/autosize';
+import ScrollPager from '@/components/components/ScrollPager/ScrollPager';
 
 const modules = import.meta.glob('/components/**/{index,*.js}', { eager: false })
 
@@ -55,4 +56,8 @@ document.querySelectorAll('[data-module]').forEach(async (el) => {
 
 document.addEventListener('DOMContentLoaded', () => {
 	autosize(document);
+	
+	document
+		.querySelectorAll('[data-module="ScrollPager"][data-path="components"]')
+		.forEach((el) => ScrollPager(el));
 });

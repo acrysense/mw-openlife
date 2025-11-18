@@ -3,6 +3,8 @@
 
 @layer components {
     .btn {
+        position: relative;
+        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -22,6 +24,18 @@
         @include prop-vw(border-radius, 14, lg);
         backdrop-filter: blur(20px);
         transition: color $transition-default, background-position $transition-default;
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 100%;
+            @include border-all(1, solid, transparent, lg);
+            @include prop-vw(border-radius, 14, lg);
+            transition: border-color $transition-default;
+        }
         & > svg {
             @include prop-vw(min-height, 15, lg);
             @include prop-vw(width, 15, lg);
@@ -38,6 +52,9 @@
         @media screen and (hover: hover) {
             &:hover:not([disabled]) {
                 background-position: 100% 50%;
+                &::before {
+                    border-color: rgba($color-white, 0.3);
+                }
             }
         }
         @include only(tablet) {
@@ -46,6 +63,10 @@
             @include prop-vw(padding-inline, 17, md);
             @include prop-vw(font-size, 14, md);
             @include prop-vw(border-radius, 14, md);
+            &::before {
+                @include border-all(1, solid, transparent, md);
+                @include prop-vw(border-radius, 14, md);
+            }
             & > svg {
                 @include prop-vw(min-height, 15, md);
                 @include prop-vw(width, 15, md);
@@ -58,6 +79,10 @@
             @include prop-vw(padding-inline, 17, sm);
             @include prop-vw(font-size, 14, sm);
             @include prop-vw(border-radius, 14, sm);
+            &::before {
+                @include border-all(1, solid, transparent, sm);
+                @include prop-vw(border-radius, 14, sm);
+            }
             & > svg {
                 @include prop-vw(min-height, 15, sm);
                 @include prop-vw(width, 15, sm);
