@@ -5,13 +5,13 @@
     .talking {
         position: relative;
         z-index: 1;
-        @include prop-vw(padding-bottom, 160, lg);
+        @include prop-vw(padding-block, 80, lg);
 
         @include only(tablet) {
-            @include prop-vw(padding-bottom, 140, md);
+            @include prop-vw(padding-block, 70, md);
         }
         @include only(mobile) {
-            @include prop-vw(padding-bottom, 167, sm);
+            @include prop-vw(padding-block, 60, sm);
         }
 
         &__heading {
@@ -104,7 +104,7 @@
                 }
                 &--second {
                     @include prop-vw(margin-top, 62, sm);
-                    @include prop-vw(margin-left, 31, sm);
+                    @include prop-vw(margin-left, 33, sm);
                     @include prop-vw(min-width, 76, sm);
                     @include prop-vw(width, 76, sm);
                     @include prop-vw(height, 76, sm);
@@ -114,48 +114,220 @@
         }
         &__speach {
             position: absolute;
-            @include prop-vw(top, 109, lg);
-            @include prop-vw(left, 308, lg);
+            @include prop-vw(top, 189, lg);
+            @include prop-vw(left, 328, lg);
             z-index: 1;
-            display: block;
-            overflow: hidden;
-            @include prop-vw(width, 292, lg);
-            @include prop-vw(height, 98, lg);
 
             @include only(tablet) {
-                @include prop-vw(top, 109, md);
+                @include prop-vw(top, 179, md);
                 @include prop-vw(left, 20, md);
-                @include prop-vw(width, 292, md);
-                @include prop-vw(height, 96, md);
             }
             @include only(mobile) {
-                @include prop-vw(top, 116, sm);
+                @include prop-vw(top, 182, sm);
                 @include prop-vw(left, 12, sm);
-                @include prop-vw(width, 252, sm);
-                @include prop-vw(height, 83, sm);
             }
         }
         &__text {
             position: absolute;
-            @include prop-vw(top, 353, lg);
+            @include prop-vw(top, 433, lg);
             @include prop-vw(right, 301, lg);
+            z-index: 1;
+
+            @include only(tablet) {
+                @include prop-vw(top, 384, md);
+                @include prop-vw(right, 20, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 504, sm);
+                @include prop-vw(right, 36, sm);
+            }
+        }
+    }
+
+    .talking-speach {
+        &__label {
+            display: flex;
+            align-items: center;
+            @include prop-vw(gap, 3, lg);
+            @include prop-vw(margin-bottom, 10, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 15, lg);
+            font-weight: normal;
+            letter-spacing: -0.03em;
+            color: rgba($color-white, 0.3);
+            & > svg {
+                @include prop-vw(min-width, 14, lg);
+                @include prop-vw(width, 14, lg);
+                @include prop-vw(height, 14, lg);
+                color: rgba($color-white, 0.3);
+            }
+
+            @include only(tablet) {
+                @include prop-vw(gap, 3, md);
+                @include prop-vw(margin-bottom, 10, md);
+                @include prop-vw(font-size, 15, md);
+                & > svg {
+                    @include prop-vw(min-width, 14, md);
+                    @include prop-vw(width, 14, md);
+                    @include prop-vw(height, 14, md);
+                }
+            }
+            @include only(mobile) {
+                @include prop-vw(gap, 3, sm);
+                @include prop-vw(margin-bottom, 8, sm);
+                @include prop-vw(font-size, 12, sm);
+                & > svg {
+                    @include prop-vw(min-width, 12, sm);
+                    @include prop-vw(width, 12, sm);
+                    @include prop-vw(height, 12, sm);
+                }
+            }
+        }
+        &__wrapper {
+            position: relative;
             z-index: 1;
             display: block;
             overflow: hidden;
-            @include prop-vw(width, 259, lg);
-            @include prop-vw(height, 71, lg);
+            @include prop-vw(padding-block, 19, lg);
+            @include prop-vw(padding-inline, 20, lg);
+            @include prop-vw(max-width, 292, lg);
+            @include prop-vw(min-width, 292, lg);
+            width: 100%;
+            background: rgba(19, 19, 20, 0.8);
+            @include border-all(1, solid, rgba($color-white, 0.1), lg);
+            @include prop-vw(border-radius, 20, lg);
+            backdrop-filter: blur(20px);
 
             @include only(tablet) {
-                @include prop-vw(top, 314, md);
-                @include prop-vw(right, 20, md);
-                @include prop-vw(width, 259, md);
-                @include prop-vw(height, 71, md);
+                @include prop-vw(padding-block, 19, md);
+                @include prop-vw(padding-inline, 20, md);
+                @include prop-vw(max-width, 292, md);
+                @include prop-vw(min-width, 292, md);
+                @include border-all(1, solid, rgba($color-white, 0.1), md);
+                @include prop-vw(border-radius, 20, md);
             }
             @include only(mobile) {
-                @include prop-vw(top, 454, sm);
-                @include prop-vw(right, 36, sm);
-                @include prop-vw(width, 219, sm);
-                @include prop-vw(height, 61, sm);
+                @include prop-vw(padding-block, 15, sm);
+                @include prop-vw(padding-inline, 17, sm);
+                @include prop-vw(max-width, 252, sm);
+                @include prop-vw(min-width, 252, sm);
+                @include border-all(1, solid, rgba($color-white, 0.1), sm);
+                @include prop-vw(border-radius, 18, sm);
+            }
+        }
+        &__text {
+            display: block;
+            @include prop-vw(max-width, 169, lg);
+            width: 100%;
+            @include prop-vw(font-size, 15, lg);
+            font-weight: normal;
+            letter-spacing: -0.03em;
+            color: rgba($color-white, 0.8);
+
+            @include only(tablet) {
+                @include prop-vw(max-width, 169, md);
+                @include prop-vw(font-size, 15, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(max-width, 146, sm);
+                @include prop-vw(font-size, 12, sm);
+            }
+        }
+        &__btn {
+            position: absolute;
+            @include prop-vw(top, 16, lg);
+            @include prop-vw(right, 16, lg);
+            z-index: 1;
+            @include prop-vw(width, 54, lg);
+            @include prop-vw(height, 26, lg);
+
+            @include only(tablet) {
+                @include prop-vw(top, 16, md);
+                @include prop-vw(right, 16, md);
+                @include prop-vw(width, 54, md);
+                @include prop-vw(height, 26, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 14, sm);
+                @include prop-vw(right, 14, sm);
+                @include prop-vw(width, 47, sm);
+                @include prop-vw(height, 22, sm);
+            }
+        }
+    }
+
+    .talking-text {
+        &__wrapper {
+            position: relative;
+            z-index: 1;
+            display: block;
+            overflow: hidden;
+            @include prop-vw(padding-block, 19, lg);
+            @include prop-vw(padding-inline, 20, lg);
+            @include prop-vw(max-width, 259, lg);
+            @include prop-vw(min-width, 259, lg);
+            width: 100%;
+            background: rgba(19, 19, 20, 0.8);
+            @include border-all(1, solid, rgba($color-white, 0.1), lg);
+            @include prop-vw(border-radius, 20, lg);
+            backdrop-filter: blur(20px);
+
+            @include only(tablet) {
+                @include prop-vw(padding-block, 19, md);
+                @include prop-vw(padding-inline, 20, md);
+                @include prop-vw(max-width, 259, md);
+                @include prop-vw(min-width, 259, md);
+                @include border-all(1, solid, rgba($color-white, 0.1), md);
+                @include prop-vw(border-radius, 20, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(padding-block, 15, sm);
+                @include prop-vw(padding-inline, 16, sm);
+                @include prop-vw(max-width, 219, sm);
+                @include prop-vw(min-width, 219, sm);
+                @include border-all(1, solid, rgba($color-white, 0.1), sm);
+                @include prop-vw(border-radius, 20, sm);
+            }
+        }
+        &__icon {
+            display: inline-block;
+            @include prop-vw(margin-bottom, -4, lg);
+            @include prop-vw(min-width, 20, lg);
+            @include prop-vw(width, 20, lg);
+            @include prop-vw(height, 20, lg);
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(margin-bottom, -4, md);
+                @include prop-vw(min-width, 20, md);
+                @include prop-vw(width, 20, md);
+                @include prop-vw(height, 20, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-bottom, -3, sm);
+                @include prop-vw(min-width, 16, sm);
+                @include prop-vw(width, 16, sm);
+                @include prop-vw(height, 16, sm);
+            }
+        }
+        &__text {
+            display: inline;
+            @include prop-vw(font-size, 15, lg);
+            font-weight: normal;
+            line-height: 1.33333333333;
+            letter-spacing: -0.03em;
+            color: rgba($color-white, 0.8);
+
+            @include only(tablet) {
+                @include prop-vw(font-size, 15, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 12, sm);
             }
         }
     }

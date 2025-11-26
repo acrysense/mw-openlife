@@ -49,7 +49,7 @@ jobs:
       - name: Build for Bitrix (CMS)
         env:
           MODE: cms
-          BASE: /local/templates/NAME/dist/
+          BASE: /local/templates/openlife/dist/
           CANONICAL_OFF: "1"
         run: |
           npm run prebuild || echo "no prebuild"

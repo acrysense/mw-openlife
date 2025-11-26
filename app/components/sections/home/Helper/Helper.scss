@@ -4,8 +4,18 @@
 @layer components {
     .helper {
         position: relative;
-        z-index: 1;
-        @include prop-vw(padding-bottom, 160, lg);
+        @include prop-vw(padding-top, 60, lg);
+        @include prop-vw(padding-bottom, 60, lg);
+
+        @include only(tablet) {
+            @include prop-vw(padding-top, 110, md);
+            @include prop-vw(padding-bottom, 140, md);
+        }
+        @include only(mobile) {
+            @include prop-vw(padding-top, 100, sm);
+            @include prop-vw(padding-bottom, 60, sm);
+        }
+
         &__decor {
             position: absolute;
             @include prop-vw(top, -510, lg);
@@ -22,16 +32,6 @@
                 display: none;
             }
         }
-
-        @include only(tablet) {
-            @include prop-vw(padding-top, 110, md);
-            @include prop-vw(padding-bottom, 140, md);
-        }
-        @include only(mobile) {
-            @include prop-vw(padding-top, 100, sm);
-            @include prop-vw(padding-bottom, 130, sm);
-        }
-
         &__top {
             position: relative;
             z-index: 1;
@@ -94,7 +94,7 @@
         &__icon {
             position: absolute;
             @include prop-vw(top, 9, lg);
-            @include prop-vw(left, 710, lg);
+            @include prop-vw(left, 680, lg);
             z-index: 1;
             display: block;
             overflow: hidden;

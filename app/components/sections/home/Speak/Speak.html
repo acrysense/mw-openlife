@@ -1,17 +1,53 @@
-<section class="speak" id="home-speak" data-path="sections/home" data-spy>
+<section class="speak" id="home-speak" data-module="Speak" data-path="sections/home" data-spy>
     <div class="container">
         <span class="speak__heading"><span>Забыл сфотографировать?</span> <br>Просто скажи — ИИ услышит и поймёт речь </span>
         <picture class="speak__img">
             <img src="/assets/images/speak-img.jpg" width="561" height="350" alt="Image">
         </picture>
-        <picture class="speak__voice">
-            <img src="/assets/images/speak-voice.svg" alt="Image">
-        </picture>
-        <picture class="speak__text">
-            <img src="/assets/images/speak-text.png" alt="Image">
-        </picture>
-        <picture class="speak__track">
-            <img src="/assets/images/speak-track.svg" alt="Image">
-        </picture>
+        <div class="speak-text speak__text">
+            <div class="speak-text__wrapper">
+                <div class="speak-text__progress" 
+                    data-lottie-src="/assets/lottie/voice-speak.json" 
+                    data-lottie-loop="1" 
+                    data-lottie-once="0"
+                    data-lottie-speed="1"
+                    data-lottie-hover="0">
+                </div>
+                <span class="speak-text__value">Чашка американо</span>
+            </div>
+        </div>
+        <div class="speak-voice speak__voice">
+            <div class="speak-voice__wrapper">
+                <span class="speak-voice__progress"></span>
+                <span class="speak-voice__value">00:02,2 сек</span>
+                <div class="speak-voice__voice" 
+                    data-lottie-src="/assets/lottie/voice.json" 
+                    data-lottie-loop="1" 
+                    data-lottie-once="0"
+                    data-lottie-speed="1"
+                    data-lottie-hover="0">
+                </div>
+                <span class="speak-voice__cancel">Отмена</span>
+            </div>
+        </div>
+        <div class="speak-track speak__track">
+            <div class="speak-track__wrapper">
+                <div class="speak-track__loading" 
+                    data-lottie-src="/assets/lottie/loading.json" 
+                    data-lottie-loop="1" 
+                    data-lottie-once="0"
+                    data-lottie-speed="1"
+                    data-lottie-hover="0">
+                </div>
+                <span class="speak-track__progress"></span>
+                <span class="speak-track__value">00:45 сек</span>
+            </div>
+            <span class="speak-track__label">
+                <svg aria-hidden="true" focusable="false" width="14" height="14">
+                    <use href="#icon-human-run"></use>
+                </svg>
+                <span>Распознаю речь...</span>
+            </span>
+        </div>
     </div>
 </section>

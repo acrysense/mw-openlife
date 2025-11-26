@@ -3,22 +3,21 @@
 
 @layer base {
 	html {
-		font-size: 16px;
+		@include prop-vw(font-size, 16, lg);
 	}
 
 	body {
-		font-family: 'SF Pro Display Regular', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+		font-family: $font-base;
 		line-height: 1;
 		color: $color-white;
-		background: $color-black;
+		background: $color-full-black;
 	}
 
 	a {
-		transition: color 0.25s ease-in-out;
+		transition: color $transition-default;
 	}
 
 	svg {
-		transition: color 0.25s ease-in-out;
+		transition: color $transition-default;
 	}
 }
-

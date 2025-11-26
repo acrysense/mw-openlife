@@ -1,3 +1,5 @@
+import { mountFlow } from './FlowFx';
+
 export default (root) => {
 	if (!root || root.__appsFloat) return;
 	root.__appsFloat = true;
@@ -81,6 +83,19 @@ export default (root) => {
 	if (document.readyState === 'complete') onResize();
 	else window.addEventListener('load', onResize, { once: true });
 
+   let disposeFlow = null;
+	const box = root.querySelector('[data-flow]');
+	if (box) {
+		disposeFlow = mountFlow(box, {
+			maskUrl: '/assets/images/logo.svg',
+			width: 820,
+			aspectW: 696, aspectH: 151, // подставь реальные
+			r: '12vmin',
+			feather: '4vmin',
+			speed: 0.006
+		});
+	}
+
 	root.__dispose = () => {
 		window.removeEventListener('scroll', onScroll);
 		window.removeEventListener('resize', onResize);
@@ -88,6 +103,7 @@ export default (root) => {
 		roRoot.disconnect();
 		hideFloat();
 		clone.remove();
+		if (disposeFlow) disposeFlow();
 	};
 
 	measure();

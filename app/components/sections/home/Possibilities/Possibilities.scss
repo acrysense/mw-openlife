@@ -5,13 +5,16 @@
     .possibilities {
         position: relative;
         z-index: 1;
+        @include prop-vw(padding-top, 80, lg);
         @include prop-vw(padding-bottom, 1119, lg);
 
         @include only(tablet) {
+            @include prop-vw(padding-top, 70, md);
             @include prop-vw(padding-bottom, 1131, md);
         }
         @include only(mobile) {
-            @include prop-vw(padding-bottom, 1214, sm);
+            @include prop-vw(padding-top, 70, sm);
+            @include prop-vw(padding-bottom, 1154, sm);
         }
 
         &__heading {
@@ -51,155 +54,505 @@
                 height: 100%;
                 object-fit: contain;
             }
-            &--1 {
-                @include prop-vw(top, 109, lg);
-                @include prop-vw(left, 353, lg);
-                @include prop-vw(width, 342, lg);
-                @include prop-vw(height, 174, lg);
-            }
-            &--2 {
-                @include prop-vw(top, 293, lg);
-                @include prop-vw(left, 527, lg);
-                @include prop-vw(width, 168, lg);
-                @include prop-vw(height, 168, lg);
-            }
-            &--3 {
-                @include prop-vw(top, 461, lg);
-                @include prop-vw(left, 353, lg);
-                @include prop-vw(width, 168, lg);
-                @include prop-vw(height, 168, lg);
-            }
-            &--4 {
-                @include prop-vw(top, 109, lg);
-                @include prop-vw(left, 705, lg);
-                @include prop-vw(width, 343, lg);
-                @include prop-vw(height, 564, lg);
-            }
             &--5 {
-                @include prop-vw(top, 683, lg);
+                @include prop-vw(top, 763, lg);
                 @include prop-vw(left, 353, lg);
                 @include prop-vw(width, 342, lg);
                 @include prop-vw(height, 319, lg);
             }
             &--6 {
-                @include prop-vw(top, 1012, lg);
+                @include prop-vw(top, 1092, lg);
                 @include prop-vw(left, 353, lg);
                 @include prop-vw(width, 342, lg);
                 @include prop-vw(height, 171, lg);
             }
             &--7 {
-                @include prop-vw(top, 683, lg);
+                @include prop-vw(top, 763, lg);
                 @include prop-vw(left, 705, lg);
                 @include prop-vw(width, 168, lg);
                 @include prop-vw(height, 168, lg);
             }
             &--8 {
-                @include prop-vw(top, 861, lg);
+                @include prop-vw(top, 941, lg);
                 @include prop-vw(left, 818, lg);
                 @include prop-vw(width, 230, lg);
                 @include prop-vw(height, 318, lg);
             }
 
             @include only(tablet) {
-                &--1 {
-                    @include prop-vw(top, 104, md);
-                    @include prop-vw(left, 20, md);
-                    @include prop-vw(width, 347, md);
-                    @include prop-vw(height, 178, md);
-                }
-                &--2 {
-                    @include prop-vw(top, 292, md);
-                    @include prop-vw(left, 200, md);
-                    @include prop-vw(width, 168, md);
-                    @include prop-vw(height, 168, md);
-                }
-                &--3 {
-                    @include prop-vw(top, 464, md);
-                    @include prop-vw(left, 20, md);
-                    @include prop-vw(width, 168, md);
-                    @include prop-vw(height, 168, md);
-                }
-                &--4 {
-                    @include prop-vw(top, 104, md);
-                    @include prop-vw(left, 377, md);
-                    @include prop-vw(width, 347, md);
-                    @include prop-vw(height, 579, md);
-                }
                 &--5 {
-                    @include prop-vw(top, 693, md);
+                    @include prop-vw(top, 763, md);
                     @include prop-vw(left, 20, md);
                     @include prop-vw(width, 347, md);
                     @include prop-vw(height, 325, md);
                 }
                 &--6 {
-                    @include prop-vw(top, 1028, md);
+                    @include prop-vw(top, 1098, md);
                     @include prop-vw(left, 20, md);
                     @include prop-vw(width, 347, md);
                     @include prop-vw(height, 168, md);
                 }
                 &--7 {
-                    @include prop-vw(top, 693, md);
+                    @include prop-vw(top, 763, md);
                     @include prop-vw(left, 377, md);
                     @include prop-vw(width, 168, md);
                     @include prop-vw(height, 168, md);
                 }
                 &--8 {
-                    @include prop-vw(top, 871, md);
+                    @include prop-vw(top, 941, md);
                     @include prop-vw(left, 494, md);
                     @include prop-vw(width, 230, md);
                     @include prop-vw(height, 324, md);
                 }
             }
             @include only(mobile) {
-                &--1 {
-                    @include prop-vw(top, 513, sm);
-                    @include prop-vw(left, 120, sm);
-                    @include prop-vw(width, 243, sm);
-                    @include prop-vw(height, 125, sm);
-                }
-                &--2 {
-                    @include prop-vw(top, 86, sm);
-                    @include prop-vw(left, 12, sm);
-                    @include prop-vw(width, 98, sm);
-                    @include prop-vw(height, 98, sm);
-                }
-                &--3 {
-                    @include prop-vw(top, 513, sm);
-                    @include prop-vw(left, 12, sm);
-                    @include prop-vw(width, 98, sm);
-                    @include prop-vw(height, 98, sm);
-                }
-                &--4 {
-                    @include prop-vw(top, 86, sm);
-                    @include prop-vw(left, 120, sm);
-                    @include prop-vw(width, 243, sm);
-                    @include prop-vw(height, 417, sm);
-                }
                 &--5 {
-                    @include prop-vw(top, 648, sm);
+                    @include prop-vw(top, 695, sm);
                     @include prop-vw(left, 120, sm);
                     @include prop-vw(width, 243, sm);
                     @include prop-vw(height, 231, sm);
                 }
                 &--6 {
-                    @include prop-vw(top, 1140, sm);
+                    @include prop-vw(top, 1185, sm);
                     @include prop-vw(left, 120, sm);
                     @include prop-vw(width, 243, sm);
                     @include prop-vw(height, 110, sm);
                 }
                 &--7 {
-                    @include prop-vw(top, 405, sm);
+                    @include prop-vw(top, 460, sm);
                     @include prop-vw(left, 12, sm);
                     @include prop-vw(width, 98, sm);
                     @include prop-vw(height, 98, sm);
                 }
                 &--8 {
-                    @include prop-vw(top, 888, sm);
+                    @include prop-vw(top, 933, sm);
                     @include prop-vw(left, 120, sm);
                     @include prop-vw(width, 171, sm);
                     @include prop-vw(height, 242, sm);
                 }
             }
+        }
+        &__timer {
+            position: absolute;
+            @include prop-vw(top, 189, lg);
+            @include prop-vw(left, 353, lg);
+            z-index: 1;
+
+            @include only(tablet) {
+                @include prop-vw(top, 174, md);
+                @include prop-vw(left, 20, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 569, sm);
+                @include prop-vw(left, 120, sm);
+            }
+        }
+        &__stats {
+            position: absolute;
+            @include prop-vw(top, 189, lg);
+            @include prop-vw(left, 705, lg);
+            z-index: 1;
+
+            @include only(tablet) {
+                @include prop-vw(top, 174, md);
+                @include prop-vw(left, 377, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 156, sm);
+                @include prop-vw(left, 120, sm);
+            }
+        }
+        &__weight {
+            position: absolute;
+            @include prop-vw(top, 373, lg);
+            @include prop-vw(left, 527, lg);
+            z-index: 1;
+
+            @include only(tablet) {
+                @include prop-vw(top, 362, md);
+                @include prop-vw(left, 200, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 156, sm);
+                @include prop-vw(left, 12, sm);
+            }
+        }
+        &__water {
+            position: absolute;
+            @include prop-vw(top, 541, lg);
+            @include prop-vw(left, 353, lg);
+            z-index: 1;
+
+            @include only(tablet) {
+                @include prop-vw(top, 524, md);
+                @include prop-vw(left, 20, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 569, sm);
+                @include prop-vw(left, 12, sm);
+            }
+        }
+    }
+
+    .possibilities-water {
+        &__wrapper {
+            display: block;
+            overflow: hidden;
+            @include prop-vw(padding, 30, lg);
+            @include prop-vw(max-width, 168, lg);
+            @include prop-vw(min-width, 168, lg);
+            @include prop-vw(min-height, 168, lg);
+            background: rgba(19, 19, 20, 0.8);
+            @include border-all(1, solid, rgba($color-white, 0.1), lg);
+            @include prop-vw(border-radius, 36, lg);
+            backdrop-filter: blur(20px);
+
+            @include only(tablet) {
+                @include prop-vw(padding, 30, md);
+                @include prop-vw(max-width, 168, md);
+                @include prop-vw(min-width, 168, md);
+                @include prop-vw(min-height, 168, md);
+                @include border-all(1, solid, rgba($color-white, 0.1), md);
+                @include prop-vw(border-radius, 36, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(padding-block, 16, sm);
+                @include prop-vw(padding-inline, 10, sm);
+                @include prop-vw(max-width, 98, sm);
+                @include prop-vw(min-width, 98, sm);
+                @include prop-vw(min-height, 98, sm);
+                @include border-all(1, solid, rgba($color-white, 0.1), sm);
+                @include prop-vw(border-radius, 22, sm);
+            }
+        }
+        &__label {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            @include prop-vw(margin-bottom, 6, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 13, lg);
+            font-weight: normal;
+            letter-spacing: -0.03em;
+            text-align: center;
+            text-transform: uppercase;
+            color: rgba($color-white, 0.3);
+
+            @include only(tablet) {
+                @include prop-vw(margin-bottom, 6, md);
+                @include prop-vw(font-size, 13, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-bottom, 4, sm);
+                @include prop-vw(font-size, 10, sm);
+            }
+        }
+        &__value {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            width: fit-content;
+            @include prop-vw(font-size, 15, lg);
+            font-weight: normal;
+            letter-spacing: -0.03em;
+            text-align: center;
+            color: #20FFEC;
+            & > span {
+                @include prop-vw(font-size, 30, lg);
+                font-weight: 500;
+                letter-spacing: -0.02em;
+            }
+
+            @include only(tablet) {
+                @include prop-vw(font-size, 15, md);
+                & > span {
+                    @include prop-vw(font-size, 30, md);
+                }
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 10, sm);
+                & > span {
+                    @include prop-vw(font-size, 18, sm);
+                }
+            }
+        }
+        &__animation {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .possibilities-weight {
+        &__wrapper {
+            display: block;
+            overflow: hidden;
+            @include prop-vw(max-width, 168, lg);
+            @include prop-vw(min-width, 168, lg);
+            @include prop-vw(min-height, 168, lg);
+            background: rgba(19, 19, 20, 0.8);
+            @include border-all(1, solid, rgba($color-white, 0.1), lg);
+            @include prop-vw(border-radius, 36, lg);
+            backdrop-filter: blur(20px);
+
+            @include only(tablet) {
+                @include prop-vw(max-width, 168, md);
+                @include prop-vw(min-width, 168, md);
+                @include prop-vw(min-height, 168, md);
+                @include border-all(1, solid, rgba($color-white, 0.1), md);
+                @include prop-vw(border-radius, 36, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(max-width, 98, sm);
+                @include prop-vw(min-width, 98, sm);
+                @include prop-vw(min-height, 98, sm);
+                @include border-all(1, solid, rgba($color-white, 0.1), sm);
+                @include prop-vw(border-radius, 22, sm);
+            }
+        }
+        &__animation {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .possibilities-stats {
+        &__wrapper {
+            display: block;
+            overflow: hidden;
+            @include prop-vw(padding, 30, lg);
+            @include prop-vw(max-width, 343, lg);
+            @include prop-vw(min-width, 343, lg);
+            background: rgba(19, 19, 20, 0.8);
+            @include border-all(1, solid, rgba($color-white, 0.1), lg);
+            @include prop-vw(border-radius, 36, lg);
+            backdrop-filter: blur(20px);
+
+            @include only(tablet) {
+                @include prop-vw(padding, 30, md);
+                @include prop-vw(max-width, 347, md);
+                @include prop-vw(min-width, 347, md);
+                @include border-all(1, solid, rgba($color-white, 0.1), md);
+                @include prop-vw(border-radius, 36, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(padding, 20, sm);
+                @include prop-vw(max-width, 243, sm);
+                @include prop-vw(min-width, 243, sm);
+                @include border-all(1, solid, rgba($color-white, 0.1), sm);
+                @include prop-vw(border-radius, 22, sm);
+            }
+        }
+        &__label {
+            display: block;
+            @include prop-vw(margin-bottom, 6, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 13, lg);
+            font-weight: normal;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            color: rgba($color-white, 0.3);
+
+            @include only(tablet) {
+                @include prop-vw(margin-bottom, 6, md);
+                @include prop-vw(font-size, 13, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-bottom, 4, sm);
+                @include prop-vw(font-size, 10, sm);
+            }
+        }
+        &__title {
+            display: block;
+            @include prop-vw(margin-bottom, 20, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 17, lg);
+            font-weight: normal;
+            letter-spacing: -0.05em;
+
+            @include only(tablet) {
+                @include prop-vw(margin-bottom, 20, md);
+                @include prop-vw(font-size, 17, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-bottom, 11, sm);
+                @include prop-vw(font-size, 14, sm);
+            }
+        }
+        &__data {
+            @include prop-vw(margin-top, 10, lg);
+
+            @include only(tablet) {
+                @include prop-vw(margin-top, 10, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-top, 10, sm);
+            }
+        }
+        &__values {
+            display: flex;
+            justify-content: space-between;
+            @include prop-vw(gap, 10, lg);
+            @include prop-vw(margin-top, 8, lg);
+
+            @include only(tablet) {
+                @include prop-vw(gap, 10, md);
+                @include prop-vw(margin-top, 8, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(gap, 7, sm);
+                @include prop-vw(margin-top, 8, sm);
+            }
+        }
+        &__values-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include prop-vw(gap, 4, lg);
+            @include prop-vw(padding, 16, lg);
+            @include width-cols(2, 10, lg);
+            text-align: center;
+            background: rgba(10, 10, 10, 0.8);
+            @include prop-vw(border-radius, 15, lg);
+            
+            @include only(tablet) {
+                @include prop-vw(gap, 4, md);
+                @include prop-vw(padding, 16, md);
+                @include width-cols(2, 10, md);
+                @include prop-vw(border-radius, 15, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(gap, 3, sm);
+                @include prop-vw(padding-block, 14, sm);
+                @include prop-vw(padding-inline, 10, sm);
+                @include width-cols(2, 7, sm);
+                @include prop-vw(border-radius, 15, sm);
+            }
+        }
+        &__values-amount {
+            display: block;
+            width: fit-content;
+            @include prop-vw(font-size, 13, lg);
+            font-weight: normal;
+            letter-spacing: -0.02em;
+            color: #8EFF97;
+            &.is--down {
+                color: #FF6C62;
+            }
+            
+            @include only(tablet) {
+                @include prop-vw(font-size, 13, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 9, sm);
+            }
+        }
+        &__values-title {
+            display: block;
+            width: fit-content;
+            @include prop-vw(font-size, 13, lg);
+            font-weight: normal;
+            letter-spacing: -0.02em;
+            & > span {
+                color: rgba($color-white, 0.4);
+            }
+            
+            @include only(tablet) {
+                @include prop-vw(font-size, 13, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(font-size, 9, sm);
+            }
+        }
+    }
+
+    .possibilities-timer {
+        &__wrapper {
+            display: block;
+            overflow: hidden;
+            @include prop-vw(padding, 30, lg);
+            @include prop-vw(max-width, 342, lg);
+            @include prop-vw(min-width, 342, lg);
+            background: rgba(19, 19, 20, 0.8);
+            @include border-all(1, solid, rgba($color-white, 0.1), lg);
+            @include prop-vw(border-radius, 36, lg);
+            backdrop-filter: blur(20px);
+
+            @include only(tablet) {
+                @include prop-vw(padding, 30, md);
+                @include prop-vw(max-width, 347, md);
+                @include prop-vw(min-width, 347, md);
+                @include border-all(1, solid, rgba($color-white, 0.1), md);
+                @include prop-vw(border-radius, 36, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(padding, 20, sm);
+                @include prop-vw(max-width, 243, sm);
+                @include prop-vw(min-width, 243, sm);
+                @include border-all(1, solid, rgba($color-white, 0.1), sm);
+                @include prop-vw(border-radius, 26, sm);
+            }
+        }
+        &__label {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            @include prop-vw(margin-bottom, 6, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 13, lg);
+            font-weight: normal;
+            letter-spacing: -0.03em;
+            text-align: center;
+            text-transform: uppercase;
+            color: rgba($color-white, 0.3);
+
+            @include only(tablet) {
+                @include prop-vw(margin-bottom, 6, md);
+                @include prop-vw(font-size, 13, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-bottom, 2, sm);
+                @include prop-vw(font-size, 10, sm);
+            }
+        }
+        &__title {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            @include prop-vw(margin-bottom, 20, lg);
+            width: fit-content;
+            @include prop-vw(font-size, 17, lg);
+            font-weight: normal;
+            letter-spacing: -0.05em;
+            text-align: center;
+
+            @include only(tablet) {
+                @include prop-vw(margin-bottom, 20, md);
+                @include prop-vw(font-size, 17, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(margin-bottom, 11, sm);
+                @include prop-vw(font-size, 14, sm);
+            }
+        }
+        &__progress {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        &__value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transform: translate(-50%, -50%);
         }
     }
 }

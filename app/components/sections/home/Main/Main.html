@@ -1,6 +1,4 @@
-<section class="main" id="home-main"
-	data-module="Main" data-path="sections/home" data-spy
-	data-float-target=".main__apps" data-float-top="24" data-float-right="20">
+<section class="main" id="home-main" data-module="Main" data-path="sections/home" data-spy data-float-target=".main__apps" data-float-top="24" data-float-right="20">
     <div class="container">
         <div class="main__wrapper">
             <div class="main__info">
@@ -33,9 +31,20 @@
                 <video class="main-media__bg" poster="/assets/images/main-media-01.jpg" src="/assets/videos/main-media.mp4" autoplay loop muted playsinline preload="metadata" aria-hidden="true"></video>
             </div>
         </div>
-        <picture class="main__logo">
+        <div class="flow main__logo" data-flow>
+            <div class="flow__logo" aria-hidden="true"></div>
+            <div class="flow__spot"></div>
+        </div>
+        <!-- <picture class="main__logo">
             <img src="/assets/images/logo-blur.png" width="694" height="151" alt="Openlife">
-        </picture>
-        <video class="main__bg" poster="/assets/images/main-bg.png" src="/assets/videos/bg.mp4" autoplay loop muted playsinline preload="metadata" aria-hidden="true"></video>
+        </picture> -->
+        <video class="main__bg" poster="/assets/images/main-bg.jpg" src="/assets/videos/bg.mp4" autoplay loop muted playsinline preload="metadata" aria-hidden="true"></video>
     </div>
+    <svg width="0" height="0" style="position:absolute">
+        <filter id="flow-wiggle" x="-30%" y="-30%" width="160%" height="160%">
+            <feTurbulence id="flow-noise" type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="1" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G"/>
+            <feGaussianBlur stdDeviation="1.4" edgeMode="duplicate"/>
+        </filter>
+    </svg>
 </section>

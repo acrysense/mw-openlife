@@ -7,7 +7,7 @@
         z-index: 1;
         overflow: hidden;
         @include prop-vw(padding-top, 160, lg);
-        background: linear-gradient(180deg, $color-black 0%, $color-full-black 100%);
+        background: $color-full-black;
         &::before {
             content: '';
             position: absolute;
@@ -16,7 +16,8 @@
             display: block;
             width: 100%;
             height: 100%;
-            background: url(/assets/images/bg-noise.png), linear-gradient(180deg, $color-black 0%, $color-full-black 100%);
+            background-color: $color-full-black;
+            background-image: url(/assets/images/bg-noise.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center center;
@@ -114,16 +115,28 @@
         }
         &__app-btn {
             display: block;
+            overflow: hidden;
             @include prop-vw(min-width, 198, lg);
             @include prop-vw(width, 198, lg);
             @include prop-vw(height, 66, lg);
+            transition: opacity $transition-default;
             img {
                 display: block;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                transition: transform $transition-vs;
+                will-change: transform;
             }
 
+            @media screen and (hover: hover) {
+                &:hover {
+                    opacity: 0.75;
+                    img {
+                        transform: scale(1.015);
+                    }
+                }
+            }
             @include only(tablet) {
                 @include prop-vw(min-width, 198, md);
                 @include prop-vw(width, 198, md);
@@ -153,7 +166,7 @@
                 display: block;
                 width: 100%;
                 @include prop-vw(height, 160, lg);
-                background: linear-gradient(0deg, #101010 17.21%, rgba(16, 16, 16, 0) 96.05%);
+                background: linear-gradient(0deg, $color-full-black 17.21%, rgba($color-full-black, 0) 96.05%);
             }
 
             @include down(desktop) {
@@ -236,16 +249,28 @@
         }
         &__store-btn {
             display: block;
+            overflow: hidden;
             @include prop-vw(min-width, 144, lg);
             @include prop-vw(width, 144, lg);
             @include prop-vw(height, 48, lg);
+            transition: opacity $transition-default;
             img {
                 display: block;
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                transition: transform $transition-vs;
+                will-change: transform;
             }
 
+            @media screen and (hover: hover) {
+                &:hover {
+                    opacity: 0.75;
+                    img {
+                        transform: scale(1.015);
+                    }
+                }
+            }
             @include down(desktop) {
                 display: none;
             }
