@@ -187,6 +187,30 @@ function beautifyAndGapHtml() {
     };
 }
 
+function copyStaticLottie() {
+	return {
+		name: 'copy-static-lottie',
+        apply: 'build',
+            closeBundle() {
+                const srcDir = path.resolve(__dirname, 'app/assets/lottie')
+                const outDir = path.resolve(__dirname, 'dist/assets/lottie')
+                if (!fs.existsSync(srcDir)) {
+                    console.log('[copy-static-lottie] no app/assets/lottie')
+                    return
+                }
+                const files = fg.sync('**/*.{json,lottie,png,jpg,jpeg,webp,avif,gif}', { cwd: srcDir })
+                fs.mkdirSync(outDir, { recursive: true })
+                for (const rel of files) {
+                    const from = path.join(srcDir, rel)
+                    const to = path.join(outDir, rel)
+                    fs.mkdirSync(path.dirname(to), { recursive: true })
+                    fs.copyFileSync(from, to)
+                }
+                console.log(`[copy-static-lottie] copied ${files.length} files`)
+            }
+	}
+}
+
 function copyStaticVideos() {
     return {
         name: 'copy-static-videos',
@@ -577,6 +601,7 @@ export default defineConfig(({ command }) => {
             flattenPagesToRoot(),
             beautifyAndGapHtml(),
             copyStaticVideos(),
+            copyStaticLottie(),
 		].filter(Boolean),
 
 		css: {

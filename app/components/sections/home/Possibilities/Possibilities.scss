@@ -211,6 +211,30 @@
                 transform: none;
             }
         }
+        &__bg {
+            position: absolute;
+            @include prop-vw(top, 200, lg);
+            left: 50%;
+            z-index: -5;
+            transform: translate(-50%, 0);
+            display: block;
+            @include prop-vw(width, 451, lg);
+            @include prop-vw(height, 677, lg);
+            filter: blur(25px);
+            object-fit: cover;
+            will-change: transform;
+
+            @include only(tablet) {
+                @include prop-vw(top, 200, md);
+                @include prop-vw(width, 451, md);
+                @include prop-vw(height, 677, md);
+            }
+            @include only(mobile) {
+                @include prop-vw(top, 200, sm);
+                @include prop-vw(width, 301, sm);
+                @include prop-vw(height, 457, sm);
+            }
+        }
     }
 
     .possibilities-water {
