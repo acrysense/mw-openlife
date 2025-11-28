@@ -54,6 +54,7 @@ export default (root=document) => {
 		const sec = root
 		sec.classList.add('is-intro')
 
+		const pager = document.querySelector('.scroll-pager')
 		const v = sec.querySelector('.main__bg')
 		const ui = [...sec.querySelectorAll('.main__info,.main__btn,.main-media')]
 		const logo = sec.querySelector('.main__logo')
@@ -61,6 +62,7 @@ export default (root=document) => {
 		gsap.set(v, { xPercent: -50, yPercent: -50, transformOrigin: '50% 50%', scale: 1 })
 		gsap.set(ui,   { autoAlpha: 0, x: 48 })   // старт справа (48px → 0)
 		if (logo) gsap.set(logo, { autoAlpha: 0 }) // лого — только прозрачность
+		if (pager) gsap.set(pager, { autoAlpha:0, x:-48 })
 
 		const fire = () => {
 			const tl = gsap.timeline({
@@ -71,7 +73,8 @@ export default (root=document) => {
 
 			// одновременно: UI летит справа → в ноль; лого — только fade
 			tl.to(ui,   { autoAlpha: 1, x: 0, duration: .7, ease: 'power2.out', stagger: .12 }, 1.0)
-			if (logo) tl.to(logo, { autoAlpha: 1,      duration: .7, ease: 'power2.out' }, 1.0)
+			if (logo) tl.to(logo, { autoAlpha: 1,      duration: 1.7, ease: 'power2.out' }, 1.0)
+			if (pager) tl.to(pager, { autoAlpha:1, x:0, duration:.7, ease:'power2.out' }, 1.0)
 		}
 
 		if (v) v.addEventListener('loadeddata', fire, { once: true })
