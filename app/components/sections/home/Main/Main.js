@@ -6,42 +6,74 @@ export default (root=document) => {
 	if (!root || root.__appsFloat) return
 	root.__appsFloat = true
 
+	if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+	window.scrollTo(0, 0)
+	document.documentElement.classList.add('intro-pending')
+
 	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
 	const clamp = (v,a,b)=>Math.max(a,Math.min(b,v))
 
+	let _lockY = 0
+	const _wheel = e => e.preventDefault()
+	const _touch = e => e.preventDefault()
+	const _keys = e => { if ([32,33,34,35,36,37,38,39,40].includes(e.keyCode)) e.preventDefault() }
+	const lockScroll = () => {
+		_lockY = 0
+		document.body.style.setProperty('--lock-y', `${_lockY}px`)
+		document.documentElement.classList.add('scroll-locked')
+		document.body.classList.add('scroll-locked')
+		window.addEventListener('wheel', _wheel, { passive:false })
+		window.addEventListener('touchmove', _touch, { passive:false })
+		window.addEventListener('keydown', _keys, { passive:false })
+	}
+	const unlockScroll = () => {
+		window.removeEventListener('wheel', _wheel)
+		window.removeEventListener('touchmove', _touch)
+		window.removeEventListener('keydown', _keys)
+		document.documentElement.classList.remove('scroll-locked')
+		document.body.classList.remove('scroll-locked')
+		ScrollTrigger.refresh()
+	}
+
 	const intro = () => {
-	if (root.__introDone || reduce) return
+		if (root.__introDone || reduce) {
+			document.documentElement.classList.remove('intro-pending')
+			return
+		}
 		root.__introDone = true
+		lockScroll()
+
 		const ov = document.createElement('div')
 		ov.className = 'main-intro'
 		document.body.appendChild(ov)
+
+		requestAnimationFrame(() => {
+			document.documentElement.classList.remove('intro-pending')
+		})
+
 		const sec = root
 		sec.classList.add('is-intro')
-		const v = root.querySelector('.main__bg')
-		const others = [...sec.querySelectorAll('.main__info,.main__btn,.main-media,.main__logo')]
+
+		const v = sec.querySelector('.main__bg')
+		const ui = [...sec.querySelectorAll('.main__info,.main__btn,.main-media')]
+		const logo = sec.querySelector('.main__logo')
+
 		gsap.set(v, { xPercent: -50, yPercent: -50, transformOrigin: '50% 50%', scale: 1 })
-		others.forEach(el => {
-			el.style.opacity = '0'
-			el.style.transform = el.classList.contains('main__logo') ? 'translate(-50%,-50%) translateY(16px)' : 'translateY(16px)'
-		})
+		gsap.set(ui,   { autoAlpha: 0, x: 48 })   // старт справа (48px → 0)
+		if (logo) gsap.set(logo, { autoAlpha: 0 }) // лого — только прозрачность
+
 		const fire = () => {
-			gsap.to(ov, { opacity: 0, duration: .6, ease: 'power1.out', onComplete: () => { ov.remove(); sec.classList.remove('is-intro') } })
-			gsap.fromTo(v, { scale: 1.08 }, { scale: 1, duration: 1.0, ease: 'power2.out' })
-			gsap.to(others, {
-				opacity: 1,
-				y: 0,
-				duration: .7,
-				ease: 'power2.out',
-				delay: 1.0,
-				stagger: .25,
-				onUpdate: () => {
-					others.forEach(el => {
-						if (el.classList.contains('main__logo')) el.style.transform = 'translate(-50%,-50%)'
-						else el.style.transform = 'none'
-					})
-				}
+			const tl = gsap.timeline({
+				onComplete: () => { ov.remove(); sec.classList.remove('is-intro'); unlockScroll() }
 			})
+			tl.to(ov, { opacity: 0, duration: .6, ease: 'power1.out' }, 0)
+			tl.fromTo(v, { scale: 1.08 }, { scale: 1, duration: 1.0, ease: 'power2.out' }, 0)
+
+			// одновременно: UI летит справа → в ноль; лого — только fade
+			tl.to(ui,   { autoAlpha: 1, x: 0, duration: .7, ease: 'power2.out', stagger: .12 }, 1.0)
+			if (logo) tl.to(logo, { autoAlpha: 1,      duration: .7, ease: 'power2.out' }, 1.0)
 		}
+
 		if (v) v.addEventListener('loadeddata', fire, { once: true })
 		setTimeout(fire, 1400)
 	}
@@ -94,7 +126,6 @@ export default (root=document) => {
 			target.setAttribute('aria-hidden', 'true')
 		}
 	}
-
 	const hideFloat = () => {
 		if (clone.style.display !== 'none') clone.style.display = 'none'
 		if (target.style.visibility) {
@@ -102,14 +133,12 @@ export default (root=document) => {
 			target.removeAttribute('aria-hidden')
 		}
 	}
-
 	const tick = () => {
 		const y = window.scrollY
 		if (y < startY || y > endY) hideFloat()
 		else showFloat()
 		ticking = false
 	}
-
 	const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(tick) } }
 
 	let stMedia = null
@@ -123,6 +152,7 @@ export default (root=document) => {
 		if (!media || !mediaBox) return () => {}
 		if (tweenMedia) { tweenMedia.scrollTrigger?.kill(); tweenMedia.kill(); tweenMedia = null }
 		if (stMedia) { stMedia.kill(); stMedia = null }
+
 		const vw = window.innerWidth
 		const isMobile = vw < 744
 		const growTo = Number(root.dataset.mediaGrowTo || 488)
@@ -130,6 +160,7 @@ export default (root=document) => {
 		const w = media.getBoundingClientRect().width || 1
 		const sCap = Number(isMobile ? (root.dataset.mediaScaleCapSm || 1.06) : (root.dataset.mediaScaleCap || 1.12))
 		const sMax = clamp(Math.min(growTo / w, sCap), 1, 3)
+
 		gsap.set(media, { transformOrigin: '100% 50%', scale: 1 })
 		tweenMedia = gsap.to(media, {
 			scale: sMax,
@@ -192,7 +223,7 @@ export default (root=document) => {
 		bgTL.to(bg, { x: xMid, scale: scaleMid, rotation: 15, duration: hangRatio })
 		bgTL.to(bg, { x: xOut, scale: scaleMax, rotation: 15, duration: leaveRatio })
 	}
-	
+
 	let disposeMedia = () => {}
 	let disposeBg = () => {}
 	let isRebuilding = false

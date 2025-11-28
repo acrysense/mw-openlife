@@ -2,6 +2,22 @@
 @use '@/assets/styles/base/vars' as *;
 
 @layer layout {
+	html.intro-pending .main{
+		opacity: 0;
+	}
+
+	html.scroll-locked,
+	body.scroll-locked {
+		overflow: hidden;
+		height: 100%;
+	}
+	body.scroll-locked {
+		position:fixed;
+		inset: auto 0 0 0;
+		width: 100%;
+		top: calc(-1 * var(--lock-y, 0px));
+	}
+
 	body.is-locked {
 		position: fixed;
 		inset: 0;
