@@ -88,47 +88,58 @@
         &__voice {
             position: absolute;
             @include prop-vw(top, 270, lg);
-            @include prop-vw(right, 221, lg);
+            @include prop-plus(left, 50%, 320, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 281, md);
                 @include prop-vw(right, 20, md);
+                left: auto;
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 421, sm);
                 @include prop-vw(right, 12, sm);
+                left: auto;
+                transform: none;
             }
         }
         &__text {
             position: absolute;
             @include prop-vw(top, 221, lg);
-            @include prop-vw(left, 370, lg);
+            @include prop-minus(left, 50%, 300, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 243, md);
                 @include prop-vw(left, 60, md);
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 182, sm);
                 @include prop-vw(left, 12, sm);
+                transform: none;
             }
         }
         &__track {
             position: absolute;
             @include prop-vw(top, 437, lg);
-            @include prop-vw(left, 324, lg);
+            @include prop-minus(left, 50%, 290, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 431, md);
                 @include prop-vw(left, 20, md);
+                transform: none;
             }
             @include only(mobile) {
                 top: auto;
                 bottom: 0;
                 @include prop-vw(left, 12, sm);
+                transform: none;
             }
         }
     }

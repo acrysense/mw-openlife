@@ -4,6 +4,7 @@
 @layer components {
     .main {
         position: relative;
+        overflow: hidden;
         @include prop-vw(padding-block, 40, lg);
         min-height: 100dvh;
 
@@ -82,9 +83,29 @@
 
             @include only(tablet) {
                 @include prop-vw(gap, 6, md);
+                &--floating {
+                    .main {
+                        &__app-btn {
+                            @include prop-vw(min-width, 85, md);
+                        }
+                        &__app-btn + .main__app-btn {
+                            @include prop-vw(margin-left, -15, md);
+                        }
+                    }
+                }
             }
             @include only(mobile) {
                 @include prop-vw(gap, 6, sm);
+                &--floating {
+                    .main {
+                        &__app-btn {
+                            @include prop-vw(min-width, 85, sm);
+                        }
+                        &__app-btn + .main__app-btn {
+                            @include prop-vw(margin-left, -15, sm);
+                        }
+                    }
+                }
             }
         }
         &__app-btn {
@@ -226,7 +247,7 @@
         }
         @include only(mobile) {
             position: absolute;
-            @include prop-vw(right, 20, sm);
+            right: 0;
             @include prop-vw(bottom, 30, sm);
         }
 

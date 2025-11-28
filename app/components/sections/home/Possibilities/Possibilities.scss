@@ -56,29 +56,36 @@
             }
             &--5 {
                 @include prop-vw(top, 763, lg);
-                @include prop-vw(left, 353, lg);
+                @include prop-minus(left, 50%, 196, lg);
+                transform: translateX(-50%);
                 @include prop-vw(width, 342, lg);
                 @include prop-vw(height, 319, lg);
             }
             &--6 {
                 @include prop-vw(top, 1092, lg);
-                @include prop-vw(left, 353, lg);
+                @include prop-minus(left, 50%, 196, lg);
+                transform: translateX(-50%);
                 @include prop-vw(width, 342, lg);
                 @include prop-vw(height, 171, lg);
             }
             &--7 {
                 @include prop-vw(top, 763, lg);
-                @include prop-vw(left, 705, lg);
+                @include prop-plus(left, 50%, 72, lg);
+                transform: translateX(-50%);
                 @include prop-vw(width, 168, lg);
                 @include prop-vw(height, 168, lg);
             }
             &--8 {
                 @include prop-vw(top, 941, lg);
-                @include prop-vw(left, 818, lg);
+                @include prop-plus(left, 50%, 218, lg);
+                transform: translateX(-50%);
                 @include prop-vw(width, 230, lg);
                 @include prop-vw(height, 318, lg);
             }
 
+            @include down(desktop) {
+                transform: none;
+            }
             @include only(tablet) {
                 &--5 {
                     @include prop-vw(top, 763, md);
@@ -135,61 +142,73 @@
         &__timer {
             position: absolute;
             @include prop-vw(top, 189, lg);
-            @include prop-vw(left, 353, lg);
+            @include prop-minus(left, 50%, 196, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 174, md);
                 @include prop-vw(left, 20, md);
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 569, sm);
                 @include prop-vw(left, 120, sm);
+                transform: none;
             }
         }
         &__stats {
             position: absolute;
             @include prop-vw(top, 189, lg);
-            @include prop-vw(left, 705, lg);
+            @include prop-plus(left, 50%, 160, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 174, md);
                 @include prop-vw(left, 377, md);
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 156, sm);
                 @include prop-vw(left, 120, sm);
+                transform: none;
             }
         }
         &__weight {
             position: absolute;
             @include prop-vw(top, 373, lg);
-            @include prop-vw(left, 527, lg);
+            @include prop-minus(left, 50%, 110, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 362, md);
                 @include prop-vw(left, 200, md);
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 156, sm);
                 @include prop-vw(left, 12, sm);
+                transform: none;
             }
         }
         &__water {
             position: absolute;
             @include prop-vw(top, 541, lg);
-            @include prop-vw(left, 353, lg);
+            @include prop-minus(left, 50%, 282, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 524, md);
                 @include prop-vw(left, 20, md);
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 569, sm);
                 @include prop-vw(left, 12, sm);
+                transform: none;
             }
         }
     }

@@ -60,8 +60,8 @@ export default (root=document) => {
 		const logo = sec.querySelector('.main__logo')
 
 		gsap.set(v, { xPercent: -50, yPercent: -50, transformOrigin: '50% 50%', scale: 1 })
-		gsap.set(ui,   { autoAlpha: 0, x: 48 })   // старт справа (48px → 0)
-		if (logo) gsap.set(logo, { autoAlpha: 0 }) // лого — только прозрачность
+		gsap.set(ui,   { autoAlpha: 0, x: 48 })
+		if (logo) gsap.set(logo, { autoAlpha: 0 })
 		if (pager) gsap.set(pager, { autoAlpha:0, x:-48 })
 
 		const fire = () => {
@@ -71,7 +71,6 @@ export default (root=document) => {
 			tl.to(ov, { opacity: 0, duration: .6, ease: 'power1.out' }, 0)
 			tl.fromTo(v, { scale: 1.08 }, { scale: 1, duration: 1.0, ease: 'power2.out' }, 0)
 
-			// одновременно: UI летит справа → в ноль; лого — только fade
 			tl.to(ui,   { autoAlpha: 1, x: 0, duration: .7, ease: 'power2.out', stagger: .12 }, 1.0)
 			if (logo) tl.to(logo, { autoAlpha: 1,      duration: 1.7, ease: 'power2.out' }, 1.0)
 			if (pager) tl.to(pager, { autoAlpha:1, x:0, duration:.7, ease:'power2.out' }, 1.0)
@@ -161,7 +160,7 @@ export default (root=document) => {
 		const growTo = Number(root.dataset.mediaGrowTo || 488)
 		const guard = Number(isMobile ? (root.dataset.mediaStopGuardSm || 200) : (root.dataset.mediaStopGuard || 140))
 		const w = media.getBoundingClientRect().width || 1
-		const sCap = Number(isMobile ? (root.dataset.mediaScaleCapSm || 1.06) : (root.dataset.mediaScaleCap || 1.12))
+		const sCap = Number(isMobile ? (root.dataset.mediaScaleCapSm || 1.45) : (root.dataset.mediaScaleCap || 1.35))
 		const sMax = clamp(Math.min(growTo / w, sCap), 1, 3)
 
 		gsap.set(media, { transformOrigin: '100% 50%', scale: 1 })

@@ -115,31 +115,39 @@
         &__speach {
             position: absolute;
             @include prop-vw(top, 189, lg);
-            @include prop-vw(left, 328, lg);
+            @include prop-minus(left, 50%, 240, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 179, md);
                 @include prop-vw(left, 20, md);
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 182, sm);
                 @include prop-vw(left, 12, sm);
+                transform: none;
             }
         }
         &__text {
             position: absolute;
             @include prop-vw(top, 433, lg);
-            @include prop-vw(right, 301, lg);
+            @include prop-plus(left, 50%, 292, lg);
+            transform: translateX(-50%);
             z-index: 1;
 
             @include only(tablet) {
                 @include prop-vw(top, 384, md);
                 @include prop-vw(right, 20, md);
+                left: auto;
+                transform: none;
             }
             @include only(mobile) {
                 @include prop-vw(top, 504, sm);
                 @include prop-vw(right, 36, sm);
+                left: auto;
+                transform: none;
             }
         }
     }
