@@ -4,7 +4,6 @@
 @layer components {
     .main {
         position: relative;
-        z-index: 1;
         @include prop-vw(padding-block, 40, lg);
         min-height: 100dvh;
 
@@ -16,10 +15,18 @@
         }
 
         &__wrapper {
+            position: relative;
+            z-index: 10;
             margin-left: auto;
             @include prop-vw(max-width, 312, lg);
             width: 100%;
 
+            @include down(desktop) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 100dvh;
+            }
             @include only(tablet) {
                 @include prop-vw(max-width, 223, md);
             }
@@ -151,6 +158,7 @@
             display: block;
             @include prop-vw(width, 696, lg);
             @include prop-vw(height, 151, lg);
+            mix-blend-mode: difference;
             img {
                 display: block;
                 width: 100%;
@@ -185,7 +193,7 @@
             }
         }
         &__bg {
-            position: absolute;
+            position: fixed;
             top: 50%;
             left: 50%;
             z-index: -5;
@@ -268,87 +276,21 @@
         }
     }
 
-    // .flow {
-    //     position: absolute;
-    //     top: 50%;
-    //     left: 50%;
-    //     z-index: 10;
-    //     transform: translate(-50%, -50%);
-    //     @include prop-vw(width, 696, lg);
-    //     @include prop-vw(height, 151, lg);
-    //     mask-image: url('/assets/images/logo.svg');
-    //     mask-repeat: no-repeat;
-    //     mask-position: center;
-    //     mask-size: contain;
+    .main-intro{
+        position:fixed;
+        inset:0;
+        z-index:9999;
+        background:#000;
+        pointer-events:none;
+        opacity:1;
+        transition:opacity .8s ease;
+    }
 
-    //     @include only(tablet) {
-    //         @include prop-vw(width, 606, md);
-    //         @include prop-vw(height, 132, md);
-    //     }
-    //     @include only(mobile) {
-    //         @include prop-vw(width, 320, sm);
-    //         @include prop-vw(height, 69, sm);
-    //     }
-
-    //     &__canvas {
-    //         position: absolute;
-    //         inset: 0;
-    //         display: block;
-    //         width: 100%;
-    //         height: 100%;
-    //     }
-    // }
-	/* размеры контейнера вы уже задали, главное — слои ниже */
-    .flow{
-	position:relative;
-	/* ширину поставим из JS: --w = min(56vw, 820px) */
-	width:var(--w, 56vw);
-	/* пропорции твоего логотипа (подставь реальные, ниже пример 696/151) */
-	aspect-ratio:696/151;
-}
-
-.flow__logo{
-	position:absolute; inset:0;
-	/* рисуем «белый логотип» маской по svg */
-	background:#fff;
-	/* маска логотипа — задаётся и дублируется в JS тоже */
-	-webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
-	-webkit-mask-position:center;  mask-position:center;
-	-webkit-mask-size:contain;      mask-size:contain;
-}
-
-.flow__spot{
-	position:absolute; inset:0;
-	/* ВАЖНО: размываем фон ПОЗАДИ, а не сам элемент */
-	-webkit-backdrop-filter:blur(clamp(8px, 1.2vmin, 18px));
-	        backdrop-filter:blur(clamp(8px, 1.2vmin, 18px));
-
-	/* ДВЕ маски одновременно → их альфы перемножаются = пересечение:
-	   1) радиальный круг (линза), 2) контур логотипа (URL) */
-	--r:12vmin; --feather:4vmin;
-
-	/* WebKit */
-	-webkit-mask-image:
-		radial-gradient(circle at var(--mx,50%) var(--my,50%),
-			#000 calc(var(--r) - var(--feather)),
-			#000 var(--r),
-			transparent calc(var(--r) + var(--feather))
-		),
-		var(--flow-mask-url);
-	-webkit-mask-repeat: no-repeat, no-repeat;
-	-webkit-mask-position: 0 0, center;
-	-webkit-mask-size: 100% 100%, contain;
-
-	/* Стандартные */
-	mask-image:
-		radial-gradient(circle at var(--mx,50%) var(--my,50%),
-			#000 calc(var(--r) - var(--feather)),
-			#000 var(--r),
-			transparent calc(var(--r) + var(--feather))
-		),
-		var(--flow-mask-url);
-	mask-repeat: no-repeat, no-repeat;
-	mask-position: 0 0, center;
-	mask-size: 100% 100%, contain;
-}
+    .main.is-intro{
+        .main__info,
+        .main__btn{opacity:0; transform:translateX(24px)}
+        .main-media{opacity:0; transform:translateY(24px) scale(.96);}
+        .flow,
+        .main__logo{opacity:0; transform:translate(-50%,-50%) scale(.96)}
+    }
 }

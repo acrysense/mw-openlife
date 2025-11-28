@@ -3,7 +3,6 @@
 
 @layer components {
     .helper {
-        position: relative;
         @include prop-vw(padding-top, 60, lg);
         @include prop-vw(padding-bottom, 60, lg);
 
@@ -16,22 +15,6 @@
             @include prop-vw(padding-bottom, 60, sm);
         }
 
-        &__decor {
-            position: absolute;
-            @include prop-vw(top, -510, lg);
-            @include prop-vw(left, -845, lg);
-            z-index: -10;
-            transform: rotate(15deg);
-            display: block;
-            @include prop-vw(width, 1321, lg);
-            @include prop-vw(height, 1982, lg);
-            filter: blur(80px);
-            object-fit: cover;
-
-            @include down(desktop) {
-                display: none;
-            }
-        }
         &__top {
             position: relative;
             z-index: 1;
